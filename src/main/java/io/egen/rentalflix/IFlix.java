@@ -4,25 +4,29 @@ import java.util.List;
 
 public interface IFlix {
 	
+	List<Movie> mlist = null;
+
 	/**
 	 * Finds all available movies in the movie store
 	 * @return list of movies or empty list
 	 */
-	public List<Movie> findAll ();
-	
+	public  List<Movie> findAll ();
 	/**
 	 * Finds all movies in the movie store which contains <strong>name</strong> in the title
 	 * @param name String
 	 * @return list of movies or empty list
 	 */
-	public List<Movie> findByName (String name);
-	
+	public  List<Movie> findByName (String title);
 	/**
 	 * Create a new movie in the movie store
 	 * @param movie
 	 * @return Movie
 	 */
 	public Movie create (Movie movie);
+	static void Movie(String title)
+	{
+//		this.movie=title;
+	}
 	
 	/**
 	 * Update an existing movie
@@ -37,6 +41,7 @@ public interface IFlix {
 	 * @return deleted movie or throws <strong>IllegalArgumentException</strong> if movie with this id is not found
 	 */
 	public Movie delete (int id);
+	
 	
 	/**
 	 * Rent the movie with movieId to the <strong>user</strong>.
